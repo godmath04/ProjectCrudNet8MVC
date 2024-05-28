@@ -14,3 +14,59 @@
         </a>
     </div> 
     </div>
+
+<div class= "row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class=" card-header bg-dark">
+                <h3 class="text-white">
+                    <strong>Lista de Usuarios</strong></h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                        @if(Model.Count() > 0)
+                        {
+                            <table class="table table-bordered" id="tblUsuarios" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th> @Html.DisplayNameFor(m => m.Id) </th>
+                                    <th> @Html.DisplayNameFor(m => m.Nombre) </th>
+                                    <th> @Html.DisplayNameFor(m => m.Telefono) </th>
+                                    <th> @Html.DisplayNameFor(m => m.Celular) </th>
+                                    <th> @Html.DisplayNameFor(m => m.Email) </th>
+                                    <th> @Html.DisplayNameFor(m => m.FechaCreacion) </th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model){
+                                    <tr>
+                                        <td>@Html.DisplayFor(m =>item.Id)</td>
+                                            <td>@Html.DisplayFor(m => item.Id)</td>
+                                            <td>@Html.DisplayFor(m => item.Nombre)</td>
+                                            <td>@Html.DisplayFor(m => item.Telefono)</td>
+                                            <td>@Html.DisplayFor(m => item.Celular)</td>
+                                            <td>@Html.DisplayFor(m => item.Email)</td>
+                                            <td>@Html.DisplayFor(m => item.FechaCreacion)</td>
+                                            <td>
+                                                <a class="btn bt-warning" asp-action="Editar" asp-route-id="@item.Id"></a>
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>Editar
+                                            </td>
+                                    </tr>
+                                        
+                                    }
+
+                            </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                          <p> No hay registros</p>  
+                        }
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+</di>
