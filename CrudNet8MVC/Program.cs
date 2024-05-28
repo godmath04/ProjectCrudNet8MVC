@@ -25,6 +25,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
+    // Busca el controlador y carga el metodo Index y puede o no llevar parametros
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

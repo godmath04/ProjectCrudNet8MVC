@@ -1,8 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿<!-- <! Primero se debe poner una lista -->
+@model IEnumerable<CrudNet8MVC.Models.Contacto>
+@{
+    ViewData["Title"] = "Lista De Contactos";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1 class= "text-center"> Contacto con .NET 8 (.NETCORE MVC) /h1>
+    <h2 class= "text-lg-center"> Elaborado por Luis Pineda</h2>
+
+<div class = "row ">
+    <div class = "offset-9 col-3 mb-3 ">
+        <a asp-action="Crear" asp-controller="Inicio" class="btn btn-secondary d-block mx-auto btn-lg">
+                <i class="fa fa-plus" aria-hidden="true"></i> Nuevo usuario
+        </a>
+    </div> 
+    </div>

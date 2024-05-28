@@ -1,3 +1,4 @@
+using CrudNet8MVC.Data;
 using CrudNet8MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -6,16 +7,20 @@ namespace CrudNet8MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //Esto llamando a la data  para hacer uso de esos modelos 
+        private readonly ApplicationDbContext _contexto;
+        
 
-        public HomeController(ILogger<HomeController> logger)
+        //Este es el constructor y ahora puedo usarlo en cualquier metodo
+        public HomeController(ApplicationDbContext contexto)
         {
-            _logger = logger;
+            _contexto = contexto;
         }
 
         public IActionResult Index()
         {
-            return View();
+            //Pasar la base de datos a una lista
+            return View(_contexto.Contacto.ToList());
         }
 
         public IActionResult Privacy()
